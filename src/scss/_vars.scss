@@ -1,0 +1,13 @@
+// colors
+:root {
+  // base
+  --font-family: "PTSans", sans-serif;
+  --content-width: 1200px;
+  --container-offset: 30px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+  --white-color: #fff;
+  --accent-color: #E85323;
+  --gray-color: #717B83;
+}

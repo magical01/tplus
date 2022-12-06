@@ -1,0 +1,22 @@
+.header {
+  padding-top: 100px;
+  padding-bottom: 97px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: 73px;
+  }
+
+  &__descr {
+    margin: 0;
+    padding-top: 8px;
+    max-width: 430px;
+    font-size: 20px;
+    line-height: 26px;
+    color: var(--gray-color);
+  }
+}
