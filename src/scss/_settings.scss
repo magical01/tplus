@@ -84,6 +84,14 @@ a {
   margin: 0 auto;
   padding: 0 var(--container-offset);
   max-width: var(--container-width);
+
+  @media (max-width: 1200px) {
+    padding: 0 20px;
+  }
+
+  @include mobile {
+    padding: 0 15px;
+  }
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
@@ -116,4 +124,9 @@ a {
   text-align: center;
   text-transform: uppercase;
   color: var(--gray-color);
+
+  @include mobile {
+    font-size: 32px;
+    line-height: 40px;
+  }
 }

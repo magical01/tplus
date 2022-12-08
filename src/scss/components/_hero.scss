@@ -1,16 +1,28 @@
 .hero {
   padding-bottom: 100px;
 
+  @include small-tablet {
+    padding-bottom: 60px;
+  }
+
   &__container {
     position: relative;
   }
 }
 
 .slider {
-  max-width: 1103px;
-  margin-left: initial;
+  text-align: center;
+  max-width: 1070px;
   margin-bottom: 40px;
   cursor: pointer;
+
+  @media (max-width: 1200px) {
+    max-width: 90%;
+  }
+
+  @media (max-width: 576px) {
+    max-width: 80%;
+  }
 
   &-scroll {
     border-radius: 5px;
@@ -104,7 +116,25 @@
 
 .slider-btn-next {
   position: absolute;
-  right: 4.5%;
+  right: 2.5%;
   bottom: 50%;
   z-index: 1000;
+
+  @media (max-width: 1200px) {
+    right: 20px;
+  }
+
+}
+
+.slider-btn-prev {
+  position: absolute;
+  left: 2.5%;
+  bottom: 50%;
+  z-index: 1000;
+  transform: rotate(180deg);
+
+  @media (max-width: 1200px) {
+    left: 20px;
+  }
+
 }

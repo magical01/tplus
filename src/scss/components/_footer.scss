@@ -1,6 +1,10 @@
 .footer {
   padding-bottom: 122px;
 
+  @include small-tablet {
+    padding-bottom: 60px;
+  }
+
   &__title {
     margin-bottom: 26px;
     font-size: 30px;
@@ -10,6 +14,10 @@
 
   &__content {
     display: flex;
+
+    @include tablet {
+      flex-direction: column;
+    }
   }
 
   &__list {
@@ -18,6 +26,32 @@
     margin-right: 236px;
     padding-top: 10px;
     max-width: 283px;
+
+    @media (max-width: 1100px) {
+      margin-right: 60px;
+    }
+
+    @include tablet {
+      flex-direction: row;
+      margin-right: 0;
+      max-width: initial;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 864px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    @include small-tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      row-gap: 20px;
+      column-gap: 10px;
+    }
   }
 
   &__item {
@@ -27,8 +61,24 @@
     line-height: 26px;
     color: var(--gray-color);
 
+    @include small-tablet {
+      font-size: 18px;
+    }
+
+    @media (max-width: 376px) {
+      font-size: 17px;
+    }
+
+    @include mobile {
+      padding-left: 15px;
+    }
+
     & + & {
       margin-top: 25px;
+
+      @include tablet {
+        margin-top: 0;
+      }
     }
 
     &::before {
@@ -41,6 +91,10 @@
       height: 5px;
       background-color: currentColor;
       // transform: translateY(-50%);
+
+      @include mobile {
+        left: 0px;
+      }
     }
   }
 
@@ -48,6 +102,19 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: calc(100% - 283px - 236px);
+
+    @media (max-width: 1100px) {
+      width: calc(100% - 283px - 60px);
+    }
+
+    @include tablet {
+      width: 100%;
+      gap: 30px;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__results {
@@ -55,6 +122,22 @@
 
     &:nth-child(2n + 2) {
       justify-content: flex-end;
+
+      @include tablet {
+        justify-content: center;
+      }
+
+      @include mobile {
+        justify-content: start;
+      }
+    }
+
+    @include tablet {
+      justify-content: center;
+    }
+
+    @include mobile {
+      justify-content: start;
     }
   }
 
