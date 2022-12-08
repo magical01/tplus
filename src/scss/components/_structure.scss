@@ -20,6 +20,10 @@
       margin-right: 60px;
       width: 115px;
     }
+
+    & + & {
+      margin-top: 23px;
+    }
   }
 
   &__caption {

@@ -1,0 +1,118 @@
+.statistics {
+  padding-bottom: 100px;
+
+  &__title {
+    margin-bottom: 88px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 40px;
+    margin-bottom: 94px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:nth-child(3n + 1) {
+      picture {
+        display: flex;
+        justify-content: center;
+        min-width: 147px;
+        margin-right: 25px;
+      }
+    }
+
+    &:nth-child(3n + 2) {
+      align-items: center;
+      justify-content: flex-end;
+
+      picture {
+        min-width: 65px;
+        margin-right: 22px;
+
+        img {
+          min-width: 52px;
+        }
+      }
+
+      .statistics__item-text {
+        strong {
+          min-width: 135px;
+        }
+
+      }
+
+    }
+
+    &:nth-child(3n + 3) {
+      justify-content: flex-end;
+
+      picture {
+        min-width: 103px;
+        margin-right: 25px;
+      }
+
+      .statistics__item-text {
+        align-items: center;
+        min-width: 38px;
+      }
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+
+      strong {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        column-gap: 10px;
+        max-width: 135px;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 40px;
+        color: var(--accent-color);
+
+        span {
+          display: inline-block;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 16px;
+        }
+      }
+
+      > span {
+        display: inline-block;
+        max-width: 143px;
+        font-size: 20px;
+        line-height: 26px;
+        color: var(--gray-color);
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    margin-right: 73px;
+  }
+
+  &__descr {
+    margin: 0;
+    max-width: 462px;
+    font-size: 20px;
+    line-height: 26px;
+    color: var(--gray-color);
+  }
+}
+
+.graphs {
+  display: flex;
+  margin-bottom: 100px;
+}
