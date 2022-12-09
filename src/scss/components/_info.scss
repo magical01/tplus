@@ -1,14 +1,44 @@
 .info {
   padding-bottom: 135px;
 
+  @include small-tablet {
+    padding-bottom: 60px;
+  }
+
   &__container {
     display: flex;
+
+    @include small-tablet {
+      flex-direction: column;
+    }
   }
 
   &-left {
     border-right: 1px solid #E85323;
-    margin-right: 73px;
-    width: 288px;
+    margin-right: 6%;
+    width: 24%;
+
+    @include small-tablet {
+      border-right: none;
+      border-bottom: 1px solid #E85323;
+      margin-right: 0;
+      margin-bottom: 50px;
+      width: 100%;
+    }
+
+    &__list {
+      @include small-tablet {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 10px;
+        row-gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      @include mobile {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
     &__item {
       display: flex;
@@ -16,10 +46,18 @@
 
       &:not(:last-child) {
         margin-bottom: 46px;
+
+        @include small-tablet {
+          margin-bottom: 0;
+        }
       }
 
       &:first-child {
         margin-bottom: 32px;
+
+        @include small-tablet {
+          margin-bottom: 0;
+        }
       }
 
       strong {
@@ -42,7 +80,11 @@
   &__right {
     display: flex;
     flex-direction: column;
-    width: calc(100% - 288px - 73px);
+    width: calc(100% - 24% - 6%);
+
+    @include small-tablet {
+      width: 100%;
+    }
   }
 
 }
@@ -51,15 +93,36 @@
   display: flex;
   margin-bottom: 93px;
 
+  @include small-tablet {
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #E85323;
+
+  }
+
+  @media (max-width: 476px) {
+    flex-wrap: wrap;
+  }
+
   &__left {
     display: flex;
     flex-direction: column;
     flex-basis: 33.33%;
+
+    @media (max-width: 476px) {
+      flex-basis: 100%;
+      align-items: center;
+      margin-bottom: 50px;
+    }
   }
 
   &__title {
     margin-bottom: 104px;
     text-align: left;
+
+    @media (max-width: 476px) {
+      margin-bottom: 40px;
+    }
   }
 
   &__item {
@@ -91,6 +154,11 @@
     align-items: center;
     flex-basis: 33.33%;
     padding-left: 15px;
+
+    @media (max-width: 476px) {
+      flex-basis: 50%;
+      padding-left: 0px;
+    }
   }
 
   &__caption {
@@ -127,19 +195,47 @@
     flex-direction: column;
     align-items: flex-end;
     flex-basis: 33.33%;
+
+    @media (max-width: 476px) {
+      flex-basis: 50%;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
+}
+
+.electricity {
+  @media (max-width: 476px) {
+    .clients__image {
+      height: 60px;
+    }
+  }
+
 }
 
 .thermal {
   padding-top: 14px;
 
+  @media (max-width: 476px) {
+    padding-top: 0;
+  }
+
   .clients__image {
     margin-bottom: 27px;
+
+    @media (max-width: 476px) {
+      margin-bottom: 10px;
+    }
   }
 
   ~ .clients__num {
     padding-right: 30px;
     min-width: 80px;
+
+    @media (max-width: 476px) {
+      padding-right: 0;
+      min-width: initial;
+    }
   }
 }
 
@@ -151,6 +247,11 @@
 
   &__list {
     display: flex;
+
+    @include mobile {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__item {
@@ -159,6 +260,14 @@
 
     & + & {
       margin-left: 223px;
+
+      @include tablet {
+        margin-left: 100px;
+      }
+
+      @include mobile {
+        margin-left: 0;
+      }
     }
 
     &-top {
@@ -166,6 +275,10 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 5px;
+
+      @include mobile {
+        justify-content: start;
+      }
     }
 
     &-title {
@@ -174,10 +287,20 @@
       line-height: 52px;
       color: var(--accent-color);
 
+      @media (max-width: 476px) {
+        font-size: 30px;
+        line-height: 30px;
+      }
+
       span {
         font-weight: 400;
         font-size: 20px;
         line-height: 26px;
+
+        @media (max-width: 476px) {
+          font-size: 18px;
+          line-height: 20px;
+        }
       }
     }
 
@@ -187,6 +310,10 @@
       line-height: 26px;
       text-align: center;
       color: var(--gray-color);
+
+      @include small-tablet {
+        text-align: initial;
+      }
     }
   }
 

@@ -15,8 +15,9 @@
     row-gap: 40px;
     margin-bottom: 84px;
 
-    @media (max-width: 992px) {
-      // grid-template-columns: repeat(2, 1fr);
+    @include small-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 20px;
     }
   }
 
@@ -145,6 +146,15 @@
           line-height: 32px;
         }
 
+        @include small-tablet {
+          margin-bottom: 5px;
+        }
+
+        @include small-tablet {
+          font-size: 28px;
+          line-height: 28px;
+        }
+
         span {
           display: inline-block;
           font-weight: 400;
@@ -166,6 +176,9 @@
           line-height: 18px;
         }
 
+        @include small-tablet {
+          max-width: 150px;
+        }
       }
     }
   }
